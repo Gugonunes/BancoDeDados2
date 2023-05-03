@@ -66,7 +66,7 @@ CREATE TABLE Atua (
 -- a) Os nomes das linguagens de programaçao envolvidas no projeto “Stark”
 
 -- Use explain para mostrar o plano de consulta sem indices
-EXPLAIN SELECT LinguagemProg.nome 
+EXPLAIN ANALYSE SELECT LinguagemProg.nome 
 FROM LinguagemProg, Atua, Projeto 
 WHERE LinguagemProg.cod_ling = Atua.cod_ling 
 AND Atua.id_proj = Projeto.id_proj 
@@ -76,6 +76,10 @@ AND Projeto.nome = 'Stark';
 CREATE INDEX idx_projeto_nome ON Projeto(nome);
 CREATE INDEX idx_atua_id_proj ON Atua(id_proj);
 CREATE INDEX idx_atua_cod_ling ON Atua(cod_ling);
+
+DROP INDEX idx_projeto_nome;
+DROP INDEX idx_atua_id_proj;
+DROP INDEX idx_atua_cod_ling;
 
 EXPLAIN SELECT LinguagemProg.nome
 FROM LinguagemProg, Atua, Projeto

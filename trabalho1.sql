@@ -50,3 +50,36 @@ create table Venda(
     FOREIGN KEY (cod_carro) REFERENCES Carro(codigo_carro),
     FOREIGN KEY (cod_funcionario) REFERENCES Funcionario(cpf)
 );
+
+-- Inserindo alguns dados
+insert into Cliente values('12345678901', 'Joao', '12345678901', '12345678901', '12345678901');
+insert into Cliente values('12345678902', 'Maria', '12345678902', '12345678902', '12345678902');
+insert into Cliente values('12345678903', 'Jose', '12345678903', '12345678903', '12345678903');
+
+insert into Funcionario values('12345678901', 'Joao', 'Vendedor');
+insert into Funcionario values('12345678902', 'Maria', 'Vendedor');
+insert into Funcionario values('12345678903', 'Jose', 'Vendedor');
+
+insert into Carro values('12345678901234567', 'Fusca', 'Azul', '1970');
+insert into Carro values('12345678901234568', 'Fusca', 'Azul', '1970');
+insert into Carro values('12345678901234569', 'Fusca', 'Azul', '1970');
+
+insert into Financiamento values(1, 'Financiamento 1', 12, 100.00, 'Financiamento', true);
+insert into Financiamento values(2, 'Financiamento 2', 12, 200.00, 'Financiamento', true);
+insert into Financiamento values(3, 'Financiamento 3', 12, 300.00, 'Financiamento', true);
+
+insert into ContratoFinanciamento values(1, '12345678901', 1);
+insert into ContratoFinanciamento values(2, '12345678902', 2);
+insert into ContratoFinanciamento values(3, '12345678903', 3);
+
+insert into Venda values(1, '2019-01-01 00:00:00', '2019-01-01 00:00:00', '2019-01-01 00:00:00', 10000.00, 100.00, '12345678901', '12345678901234567', '12345678901');
+insert into Venda values(2, '2019-01-01 00:00:00', '2019-01-01 00:00:00', '2019-01-01 00:00:00', 10000.00, 150.00, '12345678902', '12345678901234568', '12345678902');
+insert into Venda values(3, '2019-01-01 00:00:00', '2019-01-01 00:00:00', '2019-01-01 00:00:00', 10000.00, 180.00, '12345678903', '12345678901234569', '12345678903');
+
+
+SELECT * FROM CARRO;
+SELECT * FROM CLIENTE;
+SELECT * FROM FUNCIONARIO;
+SELECT * FROM FINANCIAMENTO;
+SELECT * FROM CONTRATOFINANCIAMENTO;
+SELECT * FROM VENDA;
